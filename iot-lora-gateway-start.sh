@@ -1,5 +1,7 @@
 #!/bin/bash
+
 python /opt/iotloragateway/configureGateway.py
+
 if [ ! -d "/sys/class/gpio/gpio22" ]; then
     echo "22" > /sys/class/gpio/export
 fi

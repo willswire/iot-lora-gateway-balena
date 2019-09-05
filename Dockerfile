@@ -1,5 +1,5 @@
 #Pi Supply IoT LoRa Gateway Image
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch-run AS buildstep
+FROM balenalib/raspberrypi3-debian:stretch-run AS buildstep
 
 WORKDIR /opt/iotloragateway/
 
@@ -24,7 +24,7 @@ COPY dev dev
 RUN chmod +x ./dev/compile.sh
 RUN ./dev/compile.sh
 
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch-run
+FROM balenalib/raspberrypi3-debian:stretch-run
 
 RUN install_packages python3-dialog \
   protobuf-compiler \
